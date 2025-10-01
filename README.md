@@ -28,6 +28,7 @@
 - Show toast message on save of updated profile data
 - Build New page - see all my connections
 - Build new page - See all my requests
+- Feature - accept/reject connection requests
 
 
 Body
