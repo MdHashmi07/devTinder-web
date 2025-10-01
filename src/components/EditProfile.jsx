@@ -17,7 +17,6 @@ const EditProfile = ({ user }) => {
     const [showToast, setShowToast] = useState(false);
 
 
-
     const handleSaveData = async () => {
         setError("");
         try {
@@ -37,7 +36,6 @@ const EditProfile = ({ user }) => {
         }
 
     }
-
     return (
         <div className='flex justify-center gap-28'>
             <div className='flex justify-between'>

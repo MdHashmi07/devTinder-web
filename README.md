@@ -18,8 +18,16 @@
 - add redux devtools in chorme
 - Login and see if your data is coming properly in the store
 - Navbar should update as soon as user login
-- refactore our code to add constants file
-
+- refactore our code and add constants file
+- You should not be access other routes without login
+- If token is not present, redirect to login page
+- Logout feature
+- Get the feed and add the feed in the store
+- Build the user card on feed
+- Build Edit profile feature
+- Show toast message on save of updated profile data
+- Build New page - see all my connections
+- Build new page - See all my requests
 
 
 Body

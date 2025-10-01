@@ -7,7 +7,7 @@ import UserCard from './UserCard';
 
 const Feed = () => {
   const dispatch = useDispatch();
-  const feed= useSelector((store) => store.feed);
+  const feed = useSelector((store) => store.feed);
   console.log(feed)
 
   const feedData = async () => {
@@ -15,7 +15,6 @@ const Feed = () => {
       const res = await axios.get(BASE_URL + "/feed", 
         {withCredentials: true}
       );
-      console.log(res);
       dispatch(addFeed(res.data));
     }catch(err) {
       console.log(err);
@@ -28,7 +27,7 @@ const Feed = () => {
 
   return feed && (
     <div>
-     <UserCard user={feed[1]}/>
+     <UserCard user={feed[1]} />
     </div>
   )
 }

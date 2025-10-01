@@ -1,9 +1,9 @@
 import React from 'react'
 
 const UserCard = ({user}) => {
-    const {firstName, lastName, age, gender, photoUrl, skills, about } = user;
     console.log(user)
-    return (
+    const {firstName, lastName, age, gender, photoUrl, skills, about } = user;
+    return user && (
         <div className='flex justify-center my-5'>
             <div className="card bg-base-300 shadow-sm max-w-96">
                 <figure className='w-96 max-h-72 overflow-hidden'>
