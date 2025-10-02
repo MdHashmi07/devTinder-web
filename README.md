@@ -29,6 +29,9 @@
 - Build New page - see all my connections
 - Build new page - See all my requests
 - Feature - accept/reject connection requests
+- Send Ignored/Interested user card from the feed
+- Signup new User
+- E2E testing
 
 
 Body

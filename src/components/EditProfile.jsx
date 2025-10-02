@@ -9,10 +9,10 @@ const EditProfile = ({ user }) => {
     const dispatch = useDispatch();
     const [firstName, setFirstName] = useState(user.firstName);
     const [lastName, setLastName] = useState(user.lastName);
-    const [age, setAge] = useState(user.age);
-    const [gender, setGender] = useState(user.gender);
+    const [age, setAge] = useState(user.age || "");
+    const [gender, setGender] = useState(user.gender || "");
     const [photoUrl, setPhotoUrl] = useState(user.photoUrl);
-    const [about, setAbout] = useState(user.about);
+    const [about, setAbout] = useState(user.about || "");
     const [error, setError] = useState("");
     const [showToast, setShowToast] = useState(false);
 
@@ -48,8 +48,8 @@ const EditProfile = ({ user }) => {
                     <label className="label">Age</label>
                     <input type="text" className="input" value={age} onChange={(e) => setAge(e.target.value)} placeholder="Age" />
                     <label className="label">Gender</label>
-                    <select className='input' value={gender} onChange={(e) => setGender(e.target.value)}>
-                        <option value={""} disabled selected>Select</option>
+                    <select className='input'  value={gender} onChange={(e) => setGender(e.target.value)}>
+                        <option value="" disabled >Select</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="others">Other</option>
