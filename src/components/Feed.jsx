@@ -30,7 +30,7 @@ const Feed = () => {
   if(feed.length <= 0) return <h1 className='text-center my-10 font-bold text-2xl'>No new User found!!</h1>;
   
   return feed && (
-    <div>
+    <div className='w-screen h-[100vh] flex justify-center items-center my-10'>
      <UserCard user={feed[0]} />
     </div>
   )

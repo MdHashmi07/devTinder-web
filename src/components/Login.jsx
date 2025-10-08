@@ -31,22 +31,28 @@ const Login = () => {
 
   const handleSignup = async () => {
     try {
-      const res = await axios.post(BASE_URL + "/signup", {firstName, lastName, emailId, password}, {withCredentials: true});
-      console.log(res)
+      const res = await axios.post(BASE_URL + "/signup", { firstName, lastName, emailId, password }, { withCredentials: true });
       dispatch(addUser(res.data.data));
       return navigate("/profile");
-    }catch(err) {
+    } catch (err) {
       setError(err?.response?.data);
     }
   }
 
+
   return (
-    <div className='flex justify-center my-32'>
-      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-[20rem] border p-4">
+    <div className='flex-col items-center justify-center my-20'>
+      <div class="w-full max-w-md mx-auto space-y-8 flex-col items-center" >
+        <div class="text-center">
+          <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Welcome Back, Developer</h2>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Sign in to continue your coding journey.</p>
+        </div>
+      </div >
+      <fieldset className="mx-auto my-5 fieldset bg-base-200 border-base-300 rounded-box w-[20rem] border p-4">
         <legend className="fieldset-legend text-center text-xl">{isLoggin ? "Login" : "Sign Up"}</legend>
 
         {!isLoggin && <>
-        <label className="label">First Name</label>
+          <label className="label">First Name</label>
           <input type="text" className="input" value={firstName} placeholder="First Name" onChange={(e) => setFirstName(e.target.value)} />
 
           <label className="label">Last Name</label>
@@ -59,10 +65,10 @@ const Login = () => {
         <label className="label">Password</label>
         <input type="password" className="input" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
         <p className='text-red-500'>{error}</p>
-        <button className="btn btn-secondary mt-5" onClick={isLoggin ? handleLogin : handleSignup}>{isLoggin ? "Login" : "Sign Up"}</button>
-        <p className='text-center my-2' onClick={() => setIsLoggin(!isLoggin)}>{isLoggin? "New User? SignUp" : "Existing User? LogIn"} </p>
+        <button className="btn btn-primary mt-5" onClick={isLoggin ? handleLogin : handleSignup}>{isLoggin ? "Login" : "Sign Up"}</button>
+        <p className='text-center my-2' onClick={() => setIsLoggin(!isLoggin)}>{isLoggin ? "New User? SignUp": "Existing User? LogIn"} </p>
       </fieldset>
-    </div>
+    </div >
   )
 }
 

@@ -12,23 +12,29 @@ const Navbar = () => {
 
 
   const handleLogout = async () => {
-    try{
-      await axios.post(BASE_URL+ "/logout", {}, {withCredentials: true});
+    try {
+      await axios.post(BASE_URL + "/logout", {}, { withCredentials: true });
       dispatch(removeUser());
       navigate("/login");
-    }catch(err) {
+    } catch (err) {
       console.log(err)
     }
   }
 
   return (
     <div>
-      <div className="navbar flex  bg-base-300 shadow-sm ">
-        <div className="flex-1">
-          <Link to={"/"} className="btn btn-ghost text-xl">DevTinder</Link>
+      <div className="navbar flex justify-between  bg-base-300 shadow-sm">
+        <div className=" flex items-center justify-between w-52 h-12  px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center items-center gap-3">
+            <span className="material-symbols-outlined text-primary text-3xl pt-1"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+            </svg>
+            </span>
+            <span className="text-2xl font-bold text-gray-900 dark:text-white"><Link to={"/"} >DevTinder</Link></span>
+          </div>
         </div>
-        {user && (<div className="flex items-center gap-2 mx-5">
-          <div className='me-2'>Welcome, {user.firstName}</div>
+        {user && (<div className="flex items-center gap-2 mx-5 font-bold text-xl">
+          <div className='me-3'>Welcome, {user.firstName}</div>
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
@@ -39,7 +45,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-200 rounded-box z-1 mt-3 w-52 p-2 shadow">
+              className="menu menu-sm dropdown-content bg-base-200 rounded-box z-1 mt-3 w-56 p-2 shadow">
               <li>
                 <Link to={"/profile"} className="justify-between">
                   Profile
@@ -52,7 +58,7 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-       )}
+        )}
       </div>
     </div>
   )
